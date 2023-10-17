@@ -34,17 +34,24 @@
 <script setup lang="ts">
 import MainLay from "../layouts/MainLay.vue";
 import axios from 'axios'
+import { useUserStore } from '@/stores/user'
 const password = ref('')
 const confirmPassword = ref('')
 const email = ref('')
+const store = useUserStore()
 const Login = async() =>{
     if(password.value != confirmPassword.value){
         console.error('password iss not  matching')
         return
     }
     try {
-        const token  = await axios.post('http://localhost:3000/api/ArtVenture/auth/Login',{ email:email.value , password : password.value })
-        console.log(token)
+        const token  = await axios.post('http://localhost:3000/api/ArtVenture/auth/Login',{ email:email.value , password : password.value }).then(res => {
+            store.TokenFromLogin = res.data.token ;
+            store.username = res.data.user.username ;
+        })
+        localStorage.setItem("TokenFromLogin" , store.TokenFromLogin)
+        localStorage.setItem("username" , store.username)
+        useRouter().push({name : 'VirtualGallery'})
     } catch (error) {
         console.log(error)
     }

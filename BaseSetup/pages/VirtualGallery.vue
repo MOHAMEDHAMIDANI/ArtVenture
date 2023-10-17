@@ -1,10 +1,11 @@
 <template>
-    <div>
-
-    </div>
+    <MainLay>
+        <Artwork />
+    </MainLay>
 </template>
 
 <script setup lang="ts">
+import MainLay from "../layouts/MainLay.vue";
 
 </script>
 

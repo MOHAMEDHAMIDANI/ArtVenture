@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-[500px] border-black  border-t-2">
+    <div class="w-full bottom-0 relative h-[500px] border-black  border-t-2">
         <div>
             <h3 class="text-[45px] mx-auto text-center md:text-2xl sm:text-lg capitalize font-bold w-fit">support us for more </h3>
             <div class="flex justify-center items-center h-9  my-5">
@@ -16,43 +16,43 @@
             <div class="w-[300px] h-[350px] flex flex-col justify-center items-center">
                 <h3 class="text-2xl font-bold text-center mx-auto w-[90%] h-16 text-black capitalize">about us</h3>
                 <nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link>
             </div>
             <div class="w-[300px] h-[350px] flex flex-col justify-center items-center">
                 <h3 class="text-2xl font-bold text-center mx-auto w-[90%] h-16 text-black capitalize">about us</h3>
                 <nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link>
             </div>
             <div class="w-[300px] h-[350px] flex flex-col justify-center items-center">
                 <h3 class="text-2xl font-bold text-center mx-auto w-[90%] h-16 text-black capitalize">about us</h3>
                 <nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link><nuxt-link :to="{ name: 'index' }" class="w-fit">
-                    <h3 class="text-2xl  font-bold text-left px-5 underline-offset-2 underline">learn more</h3>
+                    <h3 class="text-2xl  font-bold text-left px-5 ">learn more</h3>
                 </nuxt-link>
             </div>
         </div>

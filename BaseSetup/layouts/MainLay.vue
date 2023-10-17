@@ -2,7 +2,7 @@
     <div>
         <div class="container w-full h-full mx-auto">
             <Nav  />
-            <div class="">
+            <div class=" my-5">
                 <slot />
             </div>
         </div>  
