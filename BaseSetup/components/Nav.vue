@@ -52,7 +52,7 @@
                         </nuxt-link>
                     </div>
                     <div class="bg-white w-full hover:bg-black duration-1000 hover:text-white">
-                        <nuxt-link :to="{ name: 'index' }">
+                        <nuxt-link :to="{ name: 'addart' }">
                             <h1 class="w-full h-full text-xl font-bold text-center">add artwork</h1>
                         </nuxt-link>
                     </div>

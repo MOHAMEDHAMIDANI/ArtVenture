@@ -3,8 +3,10 @@
         <div class="w-[450px] h-[700px] flex flex-col justify-evenly items-center mx-auto mb-14 border-2 border-black ">
             <h1 class="text-2xl font-bold text-center mx-auto w-[90%] h-16 underline underline-offset-2">SignUp</h1>
             <div @click="picUpload.click()" class="w-[100px] h-[100px] border-2 border-black rounded-full overflow-hidden cursor-pointer">
-                <input @change="imgUpload()" type="file" class="hidden" ref="picUpload">
-                <img  src="../assets/img/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="">
+                <input @change="imgUpload" type="file" class="hidden" ref="picUpload">
+                <img  v-if="!pic" src="../assets/img/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="">
+                <img  v-if="pic" :src="pic" alt="">
+
             </div>
             <div class="flex flex-col h-[35%] justify-between items-center">
                 <div class="flex items-center flex-col justify-between ">
@@ -24,7 +26,7 @@
                     <input required v-model="confirmPassword" id="confirm password" type="password" class="border-b-2 border-black outline-none pl-1 w-[300px] bg-slate-50">
                 </div>
             </div>
-            <button @click="Register()" class="w-[140px] h-10 btn z-[1]">
+            <button @click="Register" class="w-[140px] h-10 btn z-[1]">
                 <h3 class="w-full h-full bg-black text-lg text-white p-0.5 border-2 border-black capitalize font-semibold">
                     submit
                 </h3>
@@ -43,7 +45,7 @@
 import MainLay from "../layouts/MainLay.vue";
 import axios from 'axios'
 import { useUserStore } from '@/stores/user'
-const picUpload : HTMLInputElement  | string = ref(null);
+const picUpload : Ref<HTMLInputElement>  | string = ref(null);
 const username = ref('')
 const password = ref('')
 const confirmPassword = ref('')
@@ -52,11 +54,12 @@ const pic = ref('')
 const store = useUserStore()
 const imgUpload = async () =>{
     const img = picUpload.value.files[0] ;
-    const formData = new FormData();
-    formData.append('image' , img)
-    console.log(img , formData);
-    const res = await axios.post('http://localhost:3000/api/ArtVenture/auth/upload' , formData)
-    console.log(res)
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(img)
+    fileReader.onloadend = () => {
+        pic.value = fileReader.result ;
+    }
+    await axios.post('http://localhost:3000/api/ArtVenture/auth/upload',{avatar : fileReader.result})
 }
 const Register = async() =>{
     if(password.value != confirmPassword.value){
@@ -64,7 +67,7 @@ const Register = async() =>{
         return
     }
     try {
-        await axios.post('http://localhost:3000/api/ArtVenture/auth/Register',{username : username.value , email:email.value , password : password.value , avatar : pic.value })
+        await axios.post('http://localhost:3000/api/ArtVenture/auth/Register',{username : username.value , email:email.value , password : password.value , image : pic.value })
         .then(res => {
             store.TokenFromRegister = res.data.token ;
             store.username = res.data.user.username ;

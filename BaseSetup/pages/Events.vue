@@ -1,6 +1,6 @@
 <template>
     <MainLay>
-
+        <Event />
     </MainLay>
 </template>
 

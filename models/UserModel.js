@@ -24,6 +24,20 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Please Provide a Password'],
         minlength: 6,
     },
+    avatar : {
+        type : String 
+    },
+    Bio : {
+
+    },
+    favoriteArt:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Artwork',
+    }],
+    // followingArtists: [{
+    // type: mongoose.Schema.Types.ObjectId,
+    // ref: 'Artist',
+    // }],
 })
 UserSchema.pre('save', async function () {
     const salt = await bcrypt.genSalt(10);
@@ -31,6 +45,9 @@ UserSchema.pre('save', async function () {
 })
 UserSchema.methods.getToken = function () {
     return Jwt.sign({ userId: this._id, username: this.username }, process.env.JWT_Secret, { expiresIn: '30d' })
+}
+UserSchema.methods.addFav = function (id) {
+    this.favoriteArt.push(id)
 }
 UserSchema.methods.comparePassword = async function (password) {
     const match = await bcrypt.compare(password, this.password);

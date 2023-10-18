@@ -4,7 +4,6 @@ const express = require('express');
 const app = express();
 const connectDB = require('./db/connect')
 const cors = require('cors');
-const multer = require('multer');
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
@@ -13,10 +12,8 @@ const authMiddleware = require('./middleware/authentication')
 app.use(express.json());
 // extra packages
 app.use(cors());
-const storage  = multer.memoryStorage();
-const upload = multer({storage : storage })
 // routes
-app.use('/api/ArtVenture/auth',upload.single('image'),authRouter)
+app.use('/api/ArtVenture/auth',authRouter)
 // app.use('/api/ArtVenture/artworks',authMiddleware ,)
 // app.use('/api/ArtVenture/users',authMiddleware ,)
 // app.use('/api/ArtVenture/events',authMiddleware , )
