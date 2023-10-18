@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs');
+const { string } = require('joi');
 
 const UserSchema = new mongoose.Schema({
     username: {
@@ -25,10 +26,10 @@ const UserSchema = new mongoose.Schema({
         minlength: 6,
     },
     avatar : {
-        type : String 
+        type : Buffer,
     },
     Bio : {
-
+        type : String,
     },
     favoriteArt:[{
         type: mongoose.Schema.Types.ObjectId,

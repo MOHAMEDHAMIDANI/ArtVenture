@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container w-full h-full mx-auto">
+        <div class="container w-full min-h-screen mx-auto">
             <Nav  />
             <div class=" my-5">
                 <slot />

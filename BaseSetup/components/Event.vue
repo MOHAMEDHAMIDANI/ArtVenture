@@ -3,9 +3,9 @@
         <div class="w-[30%] h-[95%]  flex flex-col justify-between">
             <div class="w-full h-[75%]  border-2 border-black overflow-hidden">
                 <img src="../assets/img/c40365f91a73a13388fe776ef17ddbdd.jpg" alt=""
-                    class="zoom-image   w-full h-full object-fit">
+                    class="w-full h-full object-fit">
             </div>
-            <div class="w-full h-[23%]  flex justify-between items-center">
+            <div class="w-full h-[23%]  flex xl:justify-evenly md:justify-between items-center">
                 <div
                     class="h-full w-14 border-2 border-black after:w-full after:h-full  after:bg-white  after:bg-opacity-50 after:z-10 after:absolute relative after:top-0 after:left-0 after:hidden hover:after:block duration cursor-pointer">
                     <img src="../assets/img/c40365f91a73a13388fe776ef17ddbdd.jpg" alt="" class="w-full h-full object-fit">
@@ -47,8 +47,8 @@
             </div>
             <div class="w-full  flex justify-center items-center">
                 <button class="w-[200px] mx-auto h-8">
-                    <nuxt-link :to="{ name: 'Register' }" class="w-full h-full">
-                        <h3 class="w-full h-full bg-black text-white py-1 text-sm  capitalize font-semibold">view details
+                    <nuxt-link :to="{ name: 'ArtEventTicket-eventId',params :{eventId : 14}}" class="w-full h-full">
+                        <h3 class="w-full h-full bg-black text-white py-1 text-sm  capitalize font-semibold">buy ticket
                         </h3>
                     </nuxt-link>
                 </button>

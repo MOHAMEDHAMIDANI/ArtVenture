@@ -58,7 +58,10 @@ const imgUpload = async () =>{
     fileReader.readAsDataURL(img)
     fileReader.onloadend = () => {
         pic.value = fileReader.result ;
+        console.log(fileReader.result)
     }
+    console.log(pic.value)
+
     await axios.post('http://localhost:3000/api/ArtVenture/auth/upload',{avatar : fileReader.result})
 }
 const Register = async() =>{
@@ -67,7 +70,7 @@ const Register = async() =>{
         return
     }
     try {
-        await axios.post('http://localhost:3000/api/ArtVenture/auth/Register',{username : username.value , email:email.value , password : password.value , image : pic.value })
+        await axios.post('http://localhost:3000/api/ArtVenture/auth/Register',{username : username.value , email:email.value , password : password.value , avatar : pic.value })
         .then(res => {
             store.TokenFromRegister = res.data.token ;
             store.username = res.data.user.username ;

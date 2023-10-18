@@ -5,7 +5,7 @@
                 <h1 class="text-2xl font-bold capitalize ">artVenture</h1>
             </nuxt-link>
         </div>
-        <div class="flex justify-between items-center h-full xl:w-[400px] md:w-[300px] ">
+        <div class="flex  sm:hidden md:flex justify-between items-center h-full xl:w-[400px] md:w-[300px] ">
             <nuxt-link :to="{ name: 'Events' }">
                 <Icon />
                 <h1 class="text-xs hover:underline underline-offset-8 hover:scale-110 duration-500 font-medium capitalize">
@@ -45,9 +45,9 @@
                     <h3 class="text-black text-xs font-thin w-fit "> {{ store.username }}</h3>
                 </div>
                 <div  v-if="openNav"
-                    class=" capitalize absolute top-11 w-[200px] flex flex-col justify-between items-center h-[250px] border-2 border-black shadow-lg bg-white">
+                    class=" capitalize absolute top-11 z-20 w-[200px] flex flex-col justify-between items-center max-h-[250px] border-2 border-black shadow-lg bg-white">
                     <div class="bg-white w-full hover:bg-black duration-1000 hover:text-white">
-                        <nuxt-link :to="{ name: 'index' }">
+                        <nuxt-link :to="{ name: 'profile' }">
                             <h1 class="w-full h-full text-xl font-bold text-center">Profile</h1>
                         </nuxt-link>
                     </div>
@@ -61,17 +61,17 @@
                             <h1 class="w-full h-full text-xl font-bold text-center">add event</h1>
                         </nuxt-link>
                     </div>
-                    <div class="bg-white w-full hover:bg-black duration-1000 hover:text-white">
+                    <div class="bg-white md:hidden sm:block w-full hover:bg-black duration-1000 hover:text-white">
                         <nuxt-link :to="{ name: 'index' }">
                             <h1 class="w-full h-full text-xl font-bold text-center">marketplace</h1>
                         </nuxt-link>
                     </div>
-                    <div class="bg-white w-full hover:bg-black duration-1000 hover:text-white">
+                    <div class="bg-white md:hidden sm:block w-full hover:bg-black duration-1000 hover:text-white">
                         <nuxt-link :to="{ name: 'index' }">
                             <h1 class="w-full h-full text-xl font-bold text-center">virtual gallery</h1>
                         </nuxt-link>
                     </div>
-                    <div class="bg-white w-full hover:bg-black duration-1000 hover:text-white">
+                    <div class="bg-white md:hidden sm:block w-full hover:bg-black duration-1000 hover:text-white">
                         <nuxt-link :to="{ name: 'index' }">
                             <h1 class="w-full h-full text-xl font-bold text-center">events</h1>
                         </nuxt-link>
