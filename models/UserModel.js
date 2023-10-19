@@ -31,14 +31,6 @@ const UserSchema = new mongoose.Schema({
     Bio : {
         type : String,
     },
-    favoriteArt:[{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Artwork',
-    }],
-    // followingArtists: [{
-    // type: mongoose.Schema.Types.ObjectId,
-    // ref: 'Artist',
-    // }],
 })
 UserSchema.pre('save', async function () {
     const salt = await bcrypt.genSalt(10);

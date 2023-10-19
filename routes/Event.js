@@ -1,4 +1,5 @@
-const  express =  require('express');
+
+const express = require('express');
 const  router = express.Router();
 const {
     CreateEventArtWork,
@@ -8,5 +9,7 @@ const {
     UpdateEventArtWork,
     DeleteEventArtWork,
 } = require('../controllers/Event')
-router.route('/').get(GetAllEventArtWorkByUser).get(GetAllEventArtWork).post(CreateEventArtWork).patch(UpdateEventArtWork).delete(DeleteEventArtWork)
-router.route('/:id').get(GetSingleEventArtWork)
+router.route('/').get(GetAllEventArtWork).post(CreateEventArtWork)
+router.route('/user').get(GetAllEventArtWorkByUser)
+router.route('/:id').get(GetSingleEventArtWork).patch(UpdateEventArtWork).delete(DeleteEventArtWork)
+module.exports = router;

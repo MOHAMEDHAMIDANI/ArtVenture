@@ -8,15 +8,17 @@ const cors = require('cors');
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 const authRouter = require('./routes/Authentication')
+const EventRouter = require('./routes/Event')
+const artRouter = require('./routes/Artwork')
+
 const authMiddleware = require('./middleware/authentication')
 app.use(express.json());
-// extra packages
+// extra packages http://localhost:3000/api/ArtVenture/events
 app.use(cors());
 // routes
 app.use('/api/ArtVenture/auth',authRouter)
-// app.use('/api/ArtVenture/artworks',authMiddleware ,)
-// app.use('/api/ArtVenture/users',authMiddleware ,)
-// app.use('/api/ArtVenture/events',authMiddleware , )
+app.use('/api/ArtVenture/artworks',authMiddleware ,artRouter)
+app.use('/api/ArtVenture/events',authMiddleware ,EventRouter)
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
