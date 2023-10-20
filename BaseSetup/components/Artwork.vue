@@ -2,7 +2,7 @@
     <div class="w-[250px] h-[400px] border-2 rounded border-black">
         <div class="w-full h-[45%] flex justify-evenly items-center">
             <div class="w-[220px] bg-slate-400 h-[160px] rounded  overflow-hidden">
-                <img src="../assets/img/c40365f91a73a13388fe776ef17ddbdd.jpg" alt="" class="w-full h-full object-fit object-center">
+                <img src="../assets/art/download (3).jpg" alt="" class="w-full h-full object-fit object-center">
             </div>
         </div>
         <div class="w-[90%] h-[55%]   mx-auto">

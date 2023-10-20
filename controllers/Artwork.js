@@ -43,6 +43,9 @@ const DeleteArtWork = async(req,res ) => {
     const Art = await ArtSchema.findByIdAndDelete({_id : artId , createdBy : id})
     res.status(StatusCodes.OK).json({msg : 'Art  deleted successfully'})
 }
+const  uploadPhotos = async (req,res) => {
+
+}
 module.exports = {
     CreateArtWork,
     GetAllArtWork,

@@ -57,7 +57,7 @@
                         </nuxt-link>
                     </div>
                     <div class="bg-white w-full hover:bg-black duration-1000 hover:text-white">
-                        <nuxt-link :to="{ name: 'index' }">
+                        <nuxt-link :to="{ name: 'addEvent' }">
                             <h1 class="w-full h-full text-xl font-bold text-center">add event</h1>
                         </nuxt-link>
                     </div>

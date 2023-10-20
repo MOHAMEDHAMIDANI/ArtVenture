@@ -2,21 +2,21 @@
     <div class="w-full h-64 border-2 border-black flex justify-around items-center">
         <div class="w-[30%] h-[95%]  flex flex-col justify-between">
             <div class="w-full h-[75%]  border-2 border-black overflow-hidden">
-                <img src="../assets/img/c40365f91a73a13388fe776ef17ddbdd.jpg" alt=""
+                <img src="../assets/event/art-basel-miami.jpg" alt=""
                     class="w-full h-full object-fit">
             </div>
             <div class="w-full h-[23%]  flex xl:justify-evenly md:justify-between items-center">
                 <div
                     class="h-full w-14 border-2 border-black after:w-full after:h-full  after:bg-white  after:bg-opacity-50 after:z-10 after:absolute relative after:top-0 after:left-0 after:hidden hover:after:block duration cursor-pointer">
-                    <img src="../assets/img/c40365f91a73a13388fe776ef17ddbdd.jpg" alt="" class="w-full h-full object-fit">
+                    <img src="../assets/event/images (3).jpg" alt="" class="w-full h-full object-fit">
                 </div>
                 <div
                     class="h-full w-14 border-2 border-black after:w-full after:h-full  after:bg-white  after:bg-opacity-50 after:z-10 after:absolute relative after:top-0 after:left-0 after:hidden hover:after:block duration cursor-pointer">
-                    <img src="../assets/img/c40365f91a73a13388fe776ef17ddbdd.jpg" alt="" class="w-full h-full object-fit">
+                    <img src="../assets/event/images (4).jpg" alt="" class="w-full h-full object-fit">
                 </div>
                 <div
                     class="h-full w-14 border-2 border-black after:w-full after:h-full  after:bg-white  after:bg-opacity-50 after:z-10 after:absolute relative after:top-0 after:left-0 after:hidden hover:after:block duration cursor-pointer">
-                    <img src="../assets/img/c40365f91a73a13388fe776ef17ddbdd.jpg" alt="" class="w-full h-full object-fit ">
+                    <img src="../assets/event/art-basel-miami.jpg" alt="" class="w-full h-full object-fit ">
                 </div>
             </div>
         </div>
