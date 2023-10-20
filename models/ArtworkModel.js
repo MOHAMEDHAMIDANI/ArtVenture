@@ -13,5 +13,10 @@ const ArtSchema = new mongoose.Schema({
         type : String , 
         required : [true , 'please provide info']
     },
+    createdBy : {
+        type : mongoose.Schema.Types.ObjectId ,
+        ref : 'UserSchema' ,
+        required: [true, 'Please provide user'],
+    }
 })
 module.exports = mongoose.model('ArtSchema',ArtSchema)

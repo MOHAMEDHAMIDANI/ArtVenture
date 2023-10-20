@@ -37,10 +37,9 @@ const UpdateEventArtWork = async(req,res ) => {
         params : {id:eventId} , 
         user : {userId:id}
     } = req
-    const event = await EventSchema.findByIdAndUpdate({_id : eventId ,createdBy : id , ...req.body} , {new : true , runValidators: true })
+    const event = await EventSchema.findByIdAndUpdate({_id : eventId , ...req.body} , {new : true , runValidators: true })
     if(!event){
         throw new NotFoundError(` no events found by this id = ${eventId} `)
-        return
     }
     res.status(StatusCodes.OK).json({event})
 }
