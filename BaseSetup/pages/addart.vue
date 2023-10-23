@@ -101,7 +101,7 @@ const submit = async () => {
         console.log('fill the blanks first')
         return
     }
-    await  store.CreateArtWork({title : title.value , info : info.value , price : price.value ,})
+    await  store.CreateArtWork({title : title.value , info : info.value , price : price.value ,image :img.value })
     useRouter().push({name : 'profileArt'})
 }
 </script>

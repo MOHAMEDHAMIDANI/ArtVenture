@@ -13,6 +13,10 @@ const ArtSchema = new mongoose.Schema({
         type : String , 
         required : [true , 'please provide info']
     },
+    image : {
+        type : String ,
+        default : ''
+    },
     createdBy : {
         type : mongoose.Schema.Types.ObjectId ,
         ref : 'UserSchema' ,

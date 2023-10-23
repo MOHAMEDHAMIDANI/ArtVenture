@@ -21,6 +21,12 @@ const EventSchema = new mongoose.Schema({
         type : mongoose.Schema.Types.ObjectId ,
         ref : 'UserSchema' ,
         required: [true, 'Please provide user'],
-    }
+    },
+    images :[
+        {
+            type: String ,
+            default : ''
+        }
+    ]
 })
 module.exports = mongoose.model('EventSchema',EventSchema)

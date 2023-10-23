@@ -5,6 +5,7 @@ interface art {
     price : string , 
     info : string ,
     _id? : string ,
+    image : string ,
 }
 interface event {
 _id? : string ,
@@ -13,6 +14,7 @@ price? : string ,
 info : string ,
 Date : string ,
 location : string ,
+images : string[]
 }
 export const useUserStore = defineStore('User', {
     state: () => ({
@@ -58,7 +60,7 @@ export const useUserStore = defineStore('User', {
                 this.AllArtWorkByUser = res.data.arts
             })
         },
-        async GetSingleArtWork (id : string){
+        async GetSingleArtWork (id : number){
             await axios.get(`http://localhost:3000/api/ArtVenture/artworks/${id}` ,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
@@ -67,14 +69,14 @@ export const useUserStore = defineStore('User', {
                 console.log(res)
                 this.SingleArtWork = res.data})
         },
-        async UpdateArtWork(id : string , body : art){
+        async UpdateArtWork(id : number , body : art){
             await axios.patch(`http://localhost:3000/api/ArtVenture/artworks/${id}` ,body,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
                 }
             }).then(res => console.log(res))
         },
-        async DeleteArtWork(id : string ){
+        async DeleteArtWork(id : number ){
             await axios.delete(`http://localhost:3000/api/ArtVenture/artworks/${id}` ,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
@@ -108,7 +110,7 @@ export const useUserStore = defineStore('User', {
                 console.log(res)
                 this.AllEventArtWorkByUser = res.data.events })
         },
-        async GetSingleEventArtWork(id : string){
+        async GetSingleEventArtWork(id : number){
             await axios.get(`http://localhost:3000/api/ArtVenture/artworks/${id}` ,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
@@ -117,7 +119,7 @@ export const useUserStore = defineStore('User', {
                 console.log(res)
                 this.SingleEventArtWork = res.data})
         },
-        async UpdateEventArtWork (id : string , body : event){
+        async UpdateEventArtWork (id : number , body : event){
             await axios.patch(`http://localhost:3000/api/ArtVenture/events/${id}` ,body,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
@@ -125,7 +127,7 @@ export const useUserStore = defineStore('User', {
             }).then((res) => {
                 console.log(res)})
         },
-        async DeleteEventArtWork(id : string){
+        async DeleteEventArtWork(id : number){
             await axios.delete(`http://localhost:3000/api/ArtVenture/events/${id}` ,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`

@@ -13,18 +13,11 @@
                         <img src="../assets/event/art-basel-miami.jpg" alt="" class="w-full h-full object-fit zoom-image">
                     </div>
                     <div class="w-full h-[23%]  flex xl:justify-evenly md:justify-between items-center">
-                        <div
+                        <div  v-for="img in props.images "
                             class="h-full w-14 border-2 border-black after:w-full after:h-full  after:bg-white  after:bg-opacity-50 after:z-10 after:absolute relative after:top-0 after:left-0 after:hidden hover:after:block duration cursor-pointer">
                             <img src="../assets/event/images (3).jpg" alt="" class="w-full h-full object-fit">
                         </div>
-                        <div
-                            class="h-full w-14 border-2 border-black after:w-full after:h-full  after:bg-white  after:bg-opacity-50 after:z-10 after:absolute relative after:top-0 after:left-0 after:hidden hover:after:block duration cursor-pointer">
-                            <img src="../assets/event/images (4).jpg" alt="" class="w-full h-full object-fit">
-                        </div>
-                        <div
-                            class="h-full w-14 border-2 border-black after:w-full after:h-full  after:bg-white  after:bg-opacity-50 after:z-10 after:absolute relative after:top-0 after:left-0 after:hidden hover:after:block duration cursor-pointer">
-                            <img src="../assets/event/art-basel-miami.jpg" alt="" class="w-full h-full object-fit ">
-                        </div>
+                        
                     </div>
                 </div>
                 <div v-else class="w-[30%] h-[95%]  flex flex-col justify-between ">
@@ -179,6 +172,7 @@ price : string ,
 info : string ,
 date : string ,
 location : string ,
+images : string[]
 }
 const props = defineProps<event>()
 

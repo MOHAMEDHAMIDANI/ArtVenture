@@ -167,8 +167,8 @@ const submit = async () => {
         console.log('fill the blanks first')
         return
     }
-    await  store.CreateEventArtWork({title : title.value , info : info.value , location : location.value , Date : date.value})
-    useRouter().push({name : 'profileArt'})
+    await  store.CreateEventArtWork({title : title.value , info : info.value , location : location.value , Date : date.value , images : [img1.value , img2.value , img3.value ,img4.value ]})
+    useRouter().push({name : 'profileEvent'})
 }
 </script>
 

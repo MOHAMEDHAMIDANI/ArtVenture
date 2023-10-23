@@ -19,9 +19,9 @@
                     your Events</h1>
             </nuxt-link>
             </div>
-            <div class="flex  gap-4 flex-wrap justify-center ">
-                <slot />
-            </div>
+        </div>
+        <div class="flex  gap-4 flex-wrap justify-center container mx-auto">
+            <slot />
         </div>
     </div>
 </template>

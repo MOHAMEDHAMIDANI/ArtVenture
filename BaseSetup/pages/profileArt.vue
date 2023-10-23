@@ -1,6 +1,6 @@
 <template>
     <ProfileLay>
-        <EditArtwork v-for="art in store.AllArtWorkByUser" :key="art._id" :id="art._id" :title="art.title" :info="art.info" :price="art.price"  />
+        <EditArtwork v-for="art in store.AllArtWorkByUser" :key="art._id" :id="art._id" :title="art.title" :info="art.info" :price="art.price" :image="art.image"  />
     </ProfileLay>
 </template>
 

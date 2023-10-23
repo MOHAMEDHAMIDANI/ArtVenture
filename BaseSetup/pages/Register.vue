@@ -76,7 +76,7 @@ const Register = async () => {
         return
     }
     try {
-        await axios.post('http://localhost:3000/api/ArtVenture/auth/Register', { username: username.value, email: email.value, password: password.value})
+        await axios.post('http://localhost:3000/api/ArtVenture/auth/Register', { username: username.value, email: email.value, password: password.value ,  image : pic.value})
             .then(res => {
                 store.TokenFromRegister = res.data.token;
                 store.username = res.data.user.username;

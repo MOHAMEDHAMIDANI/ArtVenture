@@ -20,7 +20,7 @@
         <div class="w-full min-h-[630px] relative mt-5">
             <h3 v-if="false" class="top-[30%] left-[50%] -translate-x-[50%] -translate-y-[50%] absolute text-[50px] sm:text-3xl capitalize font-semibold"> no result yet ...</h3>
             <div class="w-full h-full flex flex-wrap  gap-5 justify-center ">
-            <Artwork v-for="art in store.AllArtWork" :key="art._id" :id="art._id" :title="art.title" :info="art.info" :price="art.price"  />
+            <Artwork v-for="art in store.AllArtWork" :key="art._id" :id="art._id" :title="art.title" :info="art.info" :price="art.price"  :image="art.image" />
         </div>
         </div>
     </MainLay>

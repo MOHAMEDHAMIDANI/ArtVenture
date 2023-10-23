@@ -25,12 +25,13 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Please Provide a Password'],
         minlength: 6,
     },
-    avatar : {
-        type : String,
-    },
     Bio : {
         type : String,
     },
+    image : {
+        type : String ,
+        default : ''
+    }
 })
 UserSchema.pre('save', async function () {
     const salt = await bcrypt.genSalt(10);

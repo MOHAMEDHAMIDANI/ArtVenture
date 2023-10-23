@@ -13,7 +13,7 @@
                 </svg>
                 <div class="w-full h-[45%] flex justify-evenly items-center">
                     <div class="w-[220px] bg-slate-400 h-[160px] rounded  overflow-hidden">
-                        <img src="../assets/art/download (3).jpg" alt="" class="w-full h-full object-fit object-center">
+                        <img :src="props.image" alt="" class="w-full h-full object-fit object-center">
                     </div>
                 </div>
                 <div class="w-[90%] h-[55%]   mx-auto">
@@ -131,6 +131,11 @@ const title = ref('')
 const imgInp = ref(null)
 const img = ref('')
 
+ price 
+ info 
+ title 
+ imgInp 
+ img 
 const upload = () => {
     const photo = imgInp.value.files[0]
     const fileReader = new FileReader()
@@ -144,6 +149,7 @@ interface art {
     title: string,
     info: string,
     price: string,
+    image : string 
 }
 const props = defineProps<art>()
 import { useUserStore } from '../stores/user'
