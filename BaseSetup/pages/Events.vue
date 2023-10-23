@@ -13,7 +13,7 @@
                 
             </div>
         <div class="w-full h-full grid grid-cols-1 gap-2">
-            <Event v-for="event in store.AllEventArtWork" :key="art._id" :id="art._id" :title="art.title" :info="art.info" :location="art.location" :date="art.date" />
+            <Event v-for="event in store.AllEventArtWork" :key="event._id" :id="event._id" :title="event.title" :info="event.info" :location="event.location" :date="event.date" />
         </div>
     </MainLay>
 </template>

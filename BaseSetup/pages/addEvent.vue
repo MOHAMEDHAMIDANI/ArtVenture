@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <button @click="Register" class="w-[140px] h-10 btn mt-2 mx-auto">
+            <button @click="submit" class="w-[140px] h-10 btn mt-2 mx-auto">
                 <h3 class="w-full h-full bg-black text-lg text-white p-0.5 border-2 border-black capitalize font-semibold">
                     add
                 </h3>
@@ -116,11 +116,12 @@
 
 <script setup lang="ts">
 import MainLay from "../layouts/MainLay.vue";
+import { useUserStore}  from '../stores/user'
+const store = useUserStore()
 const title = ref('')
 const info = ref('')
 const location = ref('')
 const date = ref(null)
-const imgInp = ref(null)
 const img1 = ref('')
 const imgInp1 = ref(null)
 const img2 = ref('')
@@ -160,6 +161,14 @@ const handleImg4 = () => {
     fileReader.onload = () => {
         img4.value = fileReader.result
     }
+}
+const submit = async () => {
+    if(!location.value || !info.value || !title.value  ||  ! date.value){
+        console.log('fill the blanks first')
+        return
+    }
+    await  store.CreateEventArtWork({title : title.value , info : info.value , location : location.value , Date : date.value})
+    useRouter().push({name : 'profileArt'})
 }
 </script>
 

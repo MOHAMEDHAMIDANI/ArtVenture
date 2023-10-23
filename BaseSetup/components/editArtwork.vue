@@ -7,7 +7,7 @@
                     <path fill="#000000"
                         d="m19.3 8.925l-4.25-4.2l1.4-1.4q.575-.575 1.413-.575t1.412.575l1.4 1.4q.575.575.6 1.388t-.55 1.387L19.3 8.925ZM17.85 10.4L7.25 21H3v-4.25l10.6-10.6l4.25 4.25Z" />
                 </svg>
-                <svg class="absolute cursor-pointer  -top-2 -left-2" xmlns="http://www.w3.org/2000/svg" width="32"
+                <svg @click="deleteart" class="absolute cursor-pointer  -top-2 -left-2" xmlns="http://www.w3.org/2000/svg" width="32"
                     height="32" viewBox="0 0 24 24">
                     <path fill="#000000" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z" />
                 </svg>
@@ -19,7 +19,7 @@
                 <div class="w-[90%] h-[55%]   mx-auto">
                     <div class="flex items items-center max-h-10 justify-between overflow-hidden ">
                         <h1 class="h-full font-semibold text-sm text-center capitalize underline w-[135px] overflow-hidden">
-                            {{ props.id }} </h1>
+                            {{ props.title }} </h1>
                         <h3 class="h-fit my-auto font-semibold text-sm ">$ {{ props.price }}</h3>
                     </div>
                     <div class="w-full h-[120px]  overflow-hidden">
@@ -149,12 +149,12 @@ const props = defineProps<art>()
 import { useUserStore } from '../stores/user'
 const store = useUserStore()
 const deleteart = async () => {
-    await store.DeleteArtWork(Number(props.id))
+    await store.DeleteArtWork(props.id)
     await store.GetAllArtWorkByUser()
     edit.value = false
 }
 const updateart = async () => {
-    await store.UpdateArtWork(Number(props.id), {
+    await store.UpdateArtWork(props.id, {
         title: title.value,
         info: info.value,
         price: price.value,

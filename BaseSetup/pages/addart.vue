@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <button @click="Register" class="w-[140px] h-10 btn mt-2 mx-auto">
+            <button @click="submit" class="w-[140px] h-10 btn mt-2 mx-auto">
                 <h3
                     class="w-full h-full bg-black text-lg text-white p-0.5 border-2 border-black capitalize font-semibold">
                     add
@@ -80,6 +80,8 @@
 
 <script setup lang="ts">
 import MainLay from "../layouts/MainLay.vue";
+import { useUserStore}  from '../stores/user'
+const store = useUserStore()
 const price = ref('')
 const info = ref('')
 const title = ref('')
@@ -93,6 +95,14 @@ const upload = () => {
     fileReader.onloadend = () => {
         img.value = fileReader.result ;
     }
+}
+const submit = async () => {
+    if(!price.value || !info.value || !title.value ){
+        console.log('fill the blanks first')
+        return
+    }
+    await  store.CreateArtWork({title : title.value , info : info.value , price : price.value ,})
+    useRouter().push({name : 'profileArt'})
 }
 </script>
 

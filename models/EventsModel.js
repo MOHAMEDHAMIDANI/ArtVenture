@@ -10,7 +10,7 @@ const EventSchema = new mongoose.Schema({
         required : [true , 'please provide location']
     },
     Date :{
-        type : Date , 
+        type : String , 
         required : [true , 'please provide Date']
     },
     info :{

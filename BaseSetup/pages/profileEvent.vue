@@ -1,6 +1,6 @@
 <template>
     <ProfileLay>
-        <EditEvent v-for="event in store.AllEventArtWork" :key="art._id" :id="art._id" :title="art.title" :info="art.info" :location="art.location" :date="art.date" />
+        <EditEvent v-for="event in store.AllEventArtWorkByUser" :key="event._id" :id="event._id" :title="event.title" :info="event.info" :location="event.location" :date="event.Date" />
     </ProfileLay>
 </template>
 

@@ -185,15 +185,16 @@ const props = defineProps<event>()
 import { useUserStore}  from '../stores/user'
 const store = useUserStore()
 const deleteart = async () => {
-    await store.DeleteEventArtWork(Number(props.id))
+    await store.DeleteEventArtWork(props.id)
     await store.GetAllEventArtWorkByUser()
     edit.value = false
 }
 const updateart = async () => {
-    await store.UpdateEventArtWork(Number(props.id) , {title : title.value ,
+    await store.UpdateEventArtWork(props.id , {title : title.value ,
 info : info.value ,
-date : date.value ,
+Date : date.value ,
 location : location.value ,})
+useRouter().push({name  : 'profileEvent'})
 }
 </script>
 

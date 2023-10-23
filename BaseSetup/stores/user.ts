@@ -11,7 +11,7 @@ _id? : string ,
 title : string ,
 price? : string , 
 info : string ,
-date : string ,
+Date : string ,
 location : string ,
 }
 export const useUserStore = defineStore('User', {
@@ -58,26 +58,29 @@ export const useUserStore = defineStore('User', {
                 this.AllArtWorkByUser = res.data.arts
             })
         },
-        async GetSingleArtWork (id : number){
+        async GetSingleArtWork (id : string){
             await axios.get(`http://localhost:3000/api/ArtVenture/artworks/${id}` ,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
                 }
-            }).then((res) => this.SingleArtWork = res.data)
+            }).then((res) => {
+                console.log(res)
+                this.SingleArtWork = res.data})
         },
-        async UpdateArtWork(id : number , body : art){
+        async UpdateArtWork(id : string , body : art){
             await axios.patch(`http://localhost:3000/api/ArtVenture/artworks/${id}` ,body,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
                 }
             }).then(res => console.log(res))
         },
-        async DeleteArtWork(id : number ){
+        async DeleteArtWork(id : string ){
             await axios.delete(`http://localhost:3000/api/ArtVenture/artworks/${id}` ,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
                 }
-            })
+            }).then((res) => {
+                console.log(res)})
         },
         async CreateEventArtWork(body : event){
             await axios.post('http://localhost:3000/api/ArtVenture/events' , body , {
@@ -105,26 +108,30 @@ export const useUserStore = defineStore('User', {
                 console.log(res)
                 this.AllEventArtWorkByUser = res.data.events })
         },
-        async GetSingleEventArtWork(id : number){
+        async GetSingleEventArtWork(id : string){
             await axios.get(`http://localhost:3000/api/ArtVenture/artworks/${id}` ,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
                 }
-            }).then((res) => this.SingleEventArtWork = res.data)
+            }).then((res) => {
+                console.log(res)
+                this.SingleEventArtWork = res.data})
         },
-        async UpdateEventArtWork (id : number , body : event){
+        async UpdateEventArtWork (id : string , body : event){
             await axios.patch(`http://localhost:3000/api/ArtVenture/events/${id}` ,body,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
                 }
-            })
+            }).then((res) => {
+                console.log(res)})
         },
-        async DeleteEventArtWork(id : number){
+        async DeleteEventArtWork(id : string){
             await axios.delete(`http://localhost:3000/api/ArtVenture/events/${id}` ,{
                 headers : {
                     Authorization : `Bearer ${this.TokenFromLogin}`
                 }
-            })
+            }).then((res) => {
+                console.log(res)})
         },
     },
 })

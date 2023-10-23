@@ -1,6 +1,4 @@
 const UserSchema = require('../models/UserModel')
-const cloudinary = require('cloudinary').v2;
-
 const { BadRequestError, UnauthenticatedError } = require('../errors/index')
 const Register = async (req, res) => {
     const user = await UserSchema.create({ ...req.body });
