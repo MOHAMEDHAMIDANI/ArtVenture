@@ -17,7 +17,7 @@
                         </nuxt-link>
                     </button>
                     <button class="w-[140px] h-full btn z-[1]">
-                        <nuxt-link :to="{ name: '' }" class="">
+                        <nuxt-link :to="{ name: 'contact' }" class="">
                             <h3
                                 class="w-full h-full bg-black text-lg text-white p-0.5 border-2 border-black capitalize font-semibold">
                                 contact us

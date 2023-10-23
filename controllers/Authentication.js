@@ -1,10 +1,6 @@
 const UserSchema = require('../models/UserModel')
 const cloudinary = require('cloudinary').v2;
-cloudinary.config({ 
-  cloud_name: 'dtvwgsrqr', 
-  api_key: '854698854765137', 
-  api_secret: 'q7BdBqlIhpTL8rzjeI8r7RDTTyM' 
-});
+
 const { BadRequestError, UnauthenticatedError } = require('../errors/index')
 const Register = async (req, res) => {
     const user = await UserSchema.create({ ...req.body });

@@ -40,9 +40,11 @@
             <div @mouseover="openNav = true" @mouseleave="openNav = false" v-if="store.TokenFromLogin" class="flex cursor-pointer relative justify-around btn items-center w-[125px] h-full">
                 <div 
                     class="w-full h-9  flex justify-between  items-center text-white  p-0.5 border-2 border-black  capitalize font-semibold">
-                    <img src="../assets/img/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt=""
+                    <img v-if="!store.photo" src="../assets/img/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt=""
                         class="w-7 h-7 object-cover border rounded-full">
-                    <h3 class="text-black text-xs font-thin w-fit "> {{ store.username }}</h3>
+                        <img v-else :src="store.photo" alt=""
+                        class="w-7 h-7 object-cover border rounded-full">
+                    <h3 class="text-black text-xs font-thin w-12 overflow-hiddin"> {{ store.username }}</h3>
                 </div>
                 <div  v-if="openNav"
                     class=" capitalize absolute top-11 z-20 w-[200px] flex flex-col justify-between items-center max-h-[250px] border-2 border-black shadow-lg bg-white">
@@ -76,8 +78,8 @@
                             <h1 class="w-full h-full text-xl font-bold text-center">events</h1>
                         </nuxt-link>
                     </div>
-                    <div class="bg-white w-full hover:bg-black duration-1000 hover:text-white">
-                        <nuxt-link :to="{ name: 'index' }">
+                    <div @click="logout" class="bg-white w-full hover:bg-black duration-1000 hover:text-white">
+                        <nuxt-link :to="{ name: '' }">
                             <h1 class="w-full h-full text-xl font-bold text-center">logout</h1>
                         </nuxt-link>
                     </div>
@@ -91,6 +93,15 @@
 import { useUserStore } from '@/stores/user'
 const store = useUserStore()
 const openNav =  ref(false)
+const logout = () => {
+    localStorage.removeItem('TokenFromRegister')
+    localStorage.removeItem('TokenFromLogin')
+    localStorage.removeItem('username')
+    localStorage.removeItem('photo')
+    store.$reset
+    useRouter().push({name : 'index'})
+    
+}
 </script>
 
 <style lang="scss" scoped>

@@ -67,6 +67,7 @@ const handleImageChange = async () => {
     fileReader.readAsDataURL(imageInput)
     fileReader.onload = () => {
         pic.value = fileReader.result
+        localStorage.setItem("photo", pic.value)
     }
 }
 const Register = async () => {

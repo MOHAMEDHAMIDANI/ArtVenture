@@ -121,6 +121,13 @@
 
 <script setup lang="ts">
 import MainLay from "../layouts/MainLay.vue";
+import  {useUserStore} from '../../stores/user.ts'
+const store = useUserStore()
+onBeforeMount(() => {
+    const id = useRoute().params.Id
+    console.log(id)
+    store.GetSingleArtWork(Number(id))
+})
 
 </script>
 
